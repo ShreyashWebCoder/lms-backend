@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo json_encode(array("status" => "success", "message" => "Query executed successfully"));
     } else {
         $error_message = "Error executing query: " . $sql . " - Error: " . $conn->error;
-        error_log($error_message);
+        error_log($error_message,);
 
         // Output the error message in the response
         echo json_encode(array("status" => "error", "message" => $error_message));
