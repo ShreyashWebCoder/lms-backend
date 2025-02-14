@@ -19,16 +19,17 @@ if ($conn->connect_error) {
 // Check if the request is to get user data
 if ($_SERVER["REQUEST_METHOD"] === "GET") {
     // Specify the columns you need
-    $sql = "SELECT userId, userName, userEmail, userRights, userContact, userAddress, userCity, userState FROM user";
+    $sql = "SELECT userId, userName, userEmail, userRights,IsActive, userContact, userAddress, userCity, userState, otpRigth, otpEmail FROM user";
     
     $result = $conn->query($sql);
 
+    
     if ($result->num_rows > 0) {
         $users = array();
         while ($row = $result->fetch_assoc()) {
             $users[] = $row;
         }
-
+        
         // Send the users data as JSON response
         echo json_encode($users);
     } else {

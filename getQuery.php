@@ -18,6 +18,7 @@
     $sql = $_POST['query'];
     $mysqli = mysqli_query($conn,$sql);
     $json_data = array();
+    
 
     while($row = mysqli_fetch_assoc($mysqli))
     {

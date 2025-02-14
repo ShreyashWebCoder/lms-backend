@@ -26,10 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $userAddress = $_POST["userAddress"];
     $userCity = $_POST["userCity"];
     $userState = $_POST["userState"];
+    $otpRights = $_POST["otpRights"];
+    $otpEmail = $_POST["otpEmail"];
 
     // SQL query to insert data into the user table
-    $sql = "INSERT INTO user (userId, password, userRights, userName, userContact, userEmail, userAddress, userCity, userState)
-            VALUES ('$userId', '$password', '$userRights', '$userName', '$userContact', '$userEmail', '$userAddress', '$userCity', '$userState')";
+    $sql = "INSERT INTO user (userId, password, userRights, userName, userContact, userEmail, userAddress, userCity, userState,otpRigth,otpEmail) VALUES ('$userId', '$password', '$userRights', '$userName', '$userContact', '$userEmail', '$userAddress', '$userCity', '$userState','$otpRights','$otpEmail')";
 
     // Execute the query
     if ($conn->query($sql) === TRUE) {

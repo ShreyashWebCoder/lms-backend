@@ -32,11 +32,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $updatedUserAddress = $_POST["userAddress"];
     $updatedUserCity = $_POST["userCity"];
     $updatedUserState = $_POST["userState"];
+    $updatedOtpRight = $_POST["otpRigth"];
+    $updatedOtpEmail = $_POST["otpEmail"];
+
     // Add more fields as needed
 
     // SQL query to update user data based on the user ID
-    $stmt = $conn->prepare("UPDATE user SET userName = ?, userEmail = ?, userAddress = ?, userCity = ?, userState = ? WHERE userId = ?");
-    $stmt->bind_param("sssssi", $updatedUserName, $updatedUserEmail, $updatedUserAddress, $updatedUserCity, $updatedUserState, $userId);
+    $stmt = $conn->prepare("UPDATE user SET userName = ?, userEmail = ?, userAddress = ?, userCity = ?, userState = ?, otpRigth = ?, otpEmail = ? WHERE userId = ?");
+    $stmt->bind_param("sssssssi", $updatedUserName, $updatedUserEmail, $updatedUserAddress, $updatedUserCity, $updatedUserState, $updatedOtpRight, $updatedOtpEmail, $userId);
 
     // Execute the query
     if ($stmt->execute()) {

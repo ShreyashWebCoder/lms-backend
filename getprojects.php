@@ -21,6 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
+        
         $projects = array();
         while ($row = $result->fetch_assoc()) {
             $projects[] = $row;
@@ -36,5 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
 
 // Close connection
 $conn->close();
+
 ?>
 

@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 require_once 'config.php';
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['id'], $_POST['projectName'], $_POST['blockName'], $_POST['areaSqft'], $_POST['areaSqmt'], $_POST['ratePerSqft'])) {
         // Get the block ID from the POST data
         $blockId = $_POST['id'];
-
+        
         // Get other updated data from the POST data
         $projectName = $_POST['projectName'];
         $blockName = $_POST['blockName'];
@@ -64,4 +64,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Respond with an error if not a POST request
     echo json_encode(['status' => 'error', 'message' => 'Invalid request method']);
 }
-?>
+?> -->
